@@ -29,6 +29,8 @@ class LineService {
     return lines;
   }
 
+  // Nota: Se está usando findById dentro del bucle por simplicidad en esta entrega.
+  // En producción, sería mejor optimizarlo con un solo query usando $in o populate.
   async deleteLines(lineIds, userId) {
     const lines = await Line.find({
       _id: { $in: lineIds },

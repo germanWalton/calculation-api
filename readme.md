@@ -174,6 +174,7 @@ Authorization: Bearer [token]
 **GET** `/api/lines/movement/:movementId`
 
 #### Eliminar Líneas
+Nota: En esta implementación, se utiliza un bucle for con consultas findById, lo cual no es óptimo en términos de rendimiento debido a múltiples accesos a la base de datos. En un entorno de producción, se podría mejorar utilizando una sola consulta agregada o un populate para reducir el número de accesos a la base de datos.
 **DELETE** `/api/lines`
 ```json
 {
